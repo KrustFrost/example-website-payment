@@ -35,6 +35,9 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        if (env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
+        }
         $this->middleware('guest')->except('logout');
     }
 }
