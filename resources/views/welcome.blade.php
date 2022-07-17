@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-around sticky-top">
 
         <div>
-        <img src="{{ asset('storage/icclogo.png')}}" width="200">
+        <img src="https://home.interface.edu.ph/images/logo/icclogo.png" width="200">
         </div>
         <div class="m-2">
             <a href="#" class="m-3">Available Payments</a>
