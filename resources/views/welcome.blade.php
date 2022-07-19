@@ -85,29 +85,29 @@ margin-top:50px;
   </button>
 </div>
 </div>
-<div class="d-flex justify-content-around gap-10 m-5">
-<div class="grid grid-cols-1 md:grid-cols-3  ">
+<div class="d-flex justify-content-around gap-5 m-2">
+<div class="grid grid-cols-1 md:grid-cols-3 ">
     
   <div class="card shadow-md m-5">
     <img class="w-6/12  mx-auto "  src="https://www.pagibigfund.gov.ph/images/homepage/Icon%203_Digital%20(Mobile_Internet).png" alt="">
   <div class="card-body">
-    <h5 class="card-title text-center">Improved Payment Transaction</h5>
-    <p class="card-text text-center">Payments in Interpay are much more efficient and productive, making payments accessible to any payment methods</p>
+    <h5 class="card-title text-center text-xl font-bold">Improved Payment Transaction</h5>
+    <p class="card-text text-center text-xl">Payments in Interpay are much more efficient and productive, making payments accessible to any payment methods</p>
   </div>
 </div>
 
   <div class="card shadow-md m-5" >
     <img  class="w-6/12 mx-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo9Yn-AaD8lH-n-wrIv7NGgKiyOH3o4dWjfg&usqp=CAU" alt="">
   <div class="card-body">
-    <h5 class="card-title text-center">Security are definitely good and secure</h5>
-    <p class="card-text text-center">We can assure you that the payments here that pay in this application are safe</p>
+    <h5 class="card-title text-center text-xl font-bold">Security are definitely good and secure</h5>
+    <p class="card-text text-center text-xl">We can assure you that the payments here that pay in this application are safe</p>
   </div>
 </div>
 <div class="card shadow-md m-5" >
     <img class="w-6/12 mx-auto"  src="https://static.thenounproject.com/png/14937-200.png" alt="">
   <div class="card-body">
-    <h5 class="card-title text-center">From Traditional to Modernized Payment</h5>
-    <p class="card-text text-center">We would like to make our payments to be easy and hassle free to every students when paying their fees in this school by using this application</p>
+    <h5 class="card-title text-center text-xl font-bold">From Traditional to Modernized Payment</h5>
+    <p class="card-text text-center text-xl">We would like to make our payments to be easy and hassle free to every students when paying their fees in this school by using this application</p>
     </div>
   </div>
 </div>
