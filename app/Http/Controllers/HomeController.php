@@ -28,5 +28,7 @@ class HomeController extends Controller
     public function courses()
     {
         return view('courses');
+
+
     }
 }
