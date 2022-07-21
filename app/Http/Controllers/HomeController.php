@@ -31,4 +31,11 @@ class HomeController extends Controller
 
 
     }
+    public function payments()
+    {
+
+        return view('payments');
+
+
+    }
 }

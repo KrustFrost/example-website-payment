@@ -46,7 +46,7 @@
                                     <a class="nav-link" href="{{ route('courses')}}">Your Subjects</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Payments</a>
+                                    <a class="nav-link" href="{{ route('payments')}}">Payments</a>
                                 </li>
                         @endauth
                     </ul>
