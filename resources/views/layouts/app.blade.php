@@ -40,13 +40,13 @@
                     <ul class="navbar-nav mx-auto my-auto">
                         @auth
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home">@php echo "Dashboard"@endphp</a>
+                                    <a class="nav-link" href="{{ route('home')}}">Dashboard</a>
                                 </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="#">@php echo "Your Courses"@endphp</a>
+                                    <a class="nav-link" href="{{ route('courses')}}">Your Courses</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">@php echo "Payments"@endphp</a>
+                                    <a class="nav-link" href="#">Payments</a>
                                 </li>
                         @endauth
                     </ul>
