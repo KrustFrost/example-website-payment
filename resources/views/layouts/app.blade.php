@@ -43,7 +43,7 @@
                                     <a class="nav-link" href="{{ route('home')}}">Dashboard</a>
                                 </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('courses')}}">Your Courses</a>
+                                    <a class="nav-link" href="{{ route('courses')}}">Your Subjects</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Payments</a>
