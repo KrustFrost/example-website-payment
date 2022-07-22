@@ -50,12 +50,6 @@ class HomeController extends Controller
         ]);
         $gcashSourceURL = $gcashSource->id(); 
 
-        $webhook = Paymongo::webhook()->create([
-            'url' => 'https://example-website-payment.herokuapp.com/bsit',
-            'events' => [
-                'source.chargeable'
-            ]
-        ]);
         return header('"Location: '.$gcashSourceURL);
     }
 }
