@@ -56,7 +56,6 @@ class HomeController extends Controller
                 'source.chargeable'
             ]
         ]);
-        dd($webhook);
         return header('"Location: '.$gcashSourceURL);
     }
 }
