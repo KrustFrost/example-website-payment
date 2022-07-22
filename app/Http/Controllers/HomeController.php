@@ -41,18 +41,16 @@ class HomeController extends Controller
 
     }
     public function bsit(){
-
         $payment = Paymongo::payment()
         ->create([
-            'amount' => 100.00,
+            'amount' => 10000.00,
             'currency' => 'PHP',
             'description' => 'Testing payment',
             'statement_descriptor' => 'Test Paymongo',
             'source' => [
-                'id' => 'src_B2tfsdgcLUirZTXxkeHoaTfX',
+                'id' => 'src_BV7dAcCpDncYu6n8zN5dfXxP',
                 'type' => 'source'
             ]
         ]);
-
     }
 }
