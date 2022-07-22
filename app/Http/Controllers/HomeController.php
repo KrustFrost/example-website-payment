@@ -49,6 +49,6 @@ class HomeController extends Controller
             ]
         ]);
         $gcashSourceURL = $gcashSource->redirect['checkout_url']; 
-        return header('"Location: '.$gcashSourceURL);
+        return header('Location: '.$gcashSourceURL);
     }
 }
