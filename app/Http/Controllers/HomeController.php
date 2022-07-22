@@ -51,6 +51,14 @@ class HomeController extends Controller
             ]
         ]);
         $gcashSourceURL = $gcashSource->redirect['checkout_url']; 
+        $webhook = Paymongo::webhook()->create([
+            'url' => $gcashSourceURL,
+            'events' => [
+                'source.chargeable'
+            ]
+        ]);
+
+        dd($gcashSourceURL);
         return  Redirect::to($gcashSourceURL);
     }
 }
