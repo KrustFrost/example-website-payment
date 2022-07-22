@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Luigel\Paymongo\Facades\Paymongo;
 class HomeController extends Controller
 {
     /**
@@ -33,24 +33,30 @@ class HomeController extends Controller
     }
     public function payments()
     {
+        
         return view('payments');
 
 
     }
     public function bsit(){
-        $stripe = new \Stripe\StripeClient(
-            'sk_test_51LNtnzJLylOKVKmNeXAqBAHW9uFvb7lEOBvx9hQ5grQhmy8fmxr6wsWzQFIBXqFZFY5x3OnJz7DNO6fzMg8RtnMD00HY203PXK'
-          );
-          $stripe->checkout->sessions->create([
-            'success_url' => 'http://127.0.0.1/success',
-            'cancel_url' => 'http://127.0.0.1/cancel',
-            'line_items' => [
-              [
-                'price' => 'price_1LO0YbJLylOKVKmNrfHvQwt3',
-                'quantity' => 1,
-              ],
-            ],
-            'mode' => 'payment',
-          ]);
+        $gcashSource = Paymongo::source()->create([
+            'type' => 'gcash',
+            'amount' => 10000.00,
+            'currency' => 'PHP',
+            'redirect' => [
+                'success' => 'https://example-website-payment.herokuapp.com/success',
+                'failed' => 'https://example-website-payment.herokuapp.com/failed'
+            ]
+        ]);
+        $gcashSourceURL = $gcashSource->id(); 
+
+        $webhook = Paymongo::webhook()->create([
+            'url' => 'https://example-website-payment.herokuapp.com/bsit',
+            'events' => [
+                'source.chargeable'
+            ]
+        ]);
+        dd($webhook);
+        return header('"Location: '.$gcashSourceURL);
     }
 }
