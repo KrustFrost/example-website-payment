@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Luigel\Paymongo\Facades\Paymongo;
+use Illuminate\Support\Facades\Redirect;
+
 class HomeController extends Controller
 {
     /**
@@ -49,6 +51,6 @@ class HomeController extends Controller
             ]
         ]);
         $gcashSourceURL = $gcashSource->redirect['checkout_url']; 
-        return header('Location: '.$gcashSourceURL);
+        return  Redirect::to($gcashSourceURL);
     }
 }
