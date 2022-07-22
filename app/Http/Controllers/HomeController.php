@@ -41,16 +41,17 @@ class HomeController extends Controller
 
     }
     public function bsit(){
-        $payment = Paymongo::payment()
-        ->create([
+        $gcashSource = Paymongo::source()->create([
+            'type' => 'gcash',
             'amount' => 10000.00,
             'currency' => 'PHP',
-            'description' => 'Testing payment',
-            'statement_descriptor' => 'Test Paymongo',
-            'source' => [
-                'id' => 'src_BV7dAcCpDncYu6n8zN5dfXxP',
-                'type' => 'source'
+            'redirect' => [
+                'success' => 'https://example-website-payment.herokuapp.com/success',
+                'failed' => 'https://example-website-payment.herokuapp.com/failed'
             ]
         ]);
+        $gcashSourceURL = $gcashSource->redirect['checkout_url']; 
+
+        return Redirect::to($gcashSourceURL);
     }
 }
