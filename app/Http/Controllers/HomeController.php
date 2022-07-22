@@ -48,8 +48,7 @@ class HomeController extends Controller
                 'failed' => 'https://example-website-payment.herokuapp.com/failed'
             ]
         ]);
-        $gcashSourceURL = $gcashSource->id(); 
-
+        $gcashSourceURL = $gcashSource->redirect['checkout_url']; 
         return header('"Location: '.$gcashSourceURL);
     }
 }
