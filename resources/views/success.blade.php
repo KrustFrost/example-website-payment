@@ -1,0 +1,1 @@
+Thanks for paying in InterPay

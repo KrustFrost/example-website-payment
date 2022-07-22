@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/cancel', function () {
+    return view('cancel');
+})->middleware('auth')->name('cancel');
+
+Route::get('/success', function () {
+    return view('success');
+})->middleware('auth')->name('success');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/courses', [App\Http\Controllers\HomeController::class, 'courses'])->name('courses');
 Route::get('/payments', [App\Http\Controllers\HomeController::class, 'payments'])->name('payments');
+
+Route::post('/bsit', [App\Http\Controllers\HomeController::class, 'bsit'])->name('bsit');
