@@ -57,8 +57,6 @@ class HomeController extends Controller
                 'source.chargeable'
             ]
         ]);
-
-        dd($gcashSourceURL);
-        return  Redirect::to($gcashSourceURL);
+        return Redirect::to($gcashSourceURL);
     }
 }
