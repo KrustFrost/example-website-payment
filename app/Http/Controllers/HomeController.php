@@ -54,7 +54,8 @@ class HomeController extends Controller
         $webhook = Paymongo::webhook()->create([
             'url' => $gcashSourceURL,
             'events' => [
-                'source.chargeable'
+                'source.chargeable',
+                'payment.paid'
             ]
         ]);
         return Redirect::to($gcashSourceURL);
