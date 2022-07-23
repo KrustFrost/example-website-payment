@@ -35,7 +35,6 @@ class HomeController extends Controller
     }
     public function payments()
     {
-        
         return view('payments');
 
 
@@ -52,6 +51,14 @@ class HomeController extends Controller
         ]);
         $gcashSourceURL = $gcashSource->redirect['checkout_url']; 
 
+        $webhook = Paymongo::webhook()->create([
+            'url' => $gcashSourceURL,
+            'events' => [
+                'source.chargeable',
+                'payment-paid',
+                'payment-failed'
+            ]
+        ]);
         return Redirect::to($gcashSourceURL);
     }
 }
