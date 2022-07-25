@@ -79,18 +79,6 @@ class HomeController extends Controller
     
     }
     public function success(){
-        if($gcashSourceID == "chargeable"){
-            $payment = Paymongo::payment()->create([
-                'amount' => 100.00,
-                'currency' => 'PHP',        
-                'description' => 'Testing payment', 
-                'statement_descriptor' => 'Test Paymongo', 
-                'source' => [
-                    'id' => $gcashSourceID,
-                    'type' => 'gcash'
-                ]    
-            ]);
-        }
         return view('success');
         }
     }  
