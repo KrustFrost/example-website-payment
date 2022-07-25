@@ -47,10 +47,10 @@
                                     <a class="nav-link" href="{{ route('home')}}">Dashboard</a>
                                 </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('courses')}}">Your Subjects</a>
+                                    <a class="nav-link" href="{{ route('courses')}}">Courses</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('payments')}}">Purchase History</a>
+                                    <a class="nav-link" href="{{ route('purchases')}}">Purchase History</a>
                                 </li>
                         @endauth
                     </ul>
@@ -82,6 +82,10 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ route('your_courses') }}">
+                                        Your Courses
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
