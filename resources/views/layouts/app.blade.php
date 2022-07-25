@@ -14,13 +14,17 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
+
+
     <script src="{{asset('js/jquery.min.js')}}"></script>
 
     <!-- Styles -->
+    <link href = '{{ asset("bootstrap/css/bootstrap.css") }}'' rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href = '{{ asset("bootstrap/css/sticky-footer-navbar.css") }}' rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">
+
 </head>
 <body>
     <div id="app">
@@ -67,7 +71,7 @@
                                 </li>
                             @endif
                         @else
-                        
+                        <button class="btn-lg"><a href="#"><i class="bi bi-cart fa-3x"></i></a></button>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -79,7 +83,9 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    <a class="dropdown-item" href="{{ route('purchases')}}">
+                                        My Purchases
+                                    </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -95,5 +101,6 @@
             @yield('content')
         </main>
     </div>
-</body>
+
+
 </html>
