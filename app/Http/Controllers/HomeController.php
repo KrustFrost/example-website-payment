@@ -39,25 +39,58 @@ class HomeController extends Controller
 
 
     }
+
     public function bsit(){
-        $gcashSource = Paymongo::source()->create([
-            'type' => 'gcash',
-            'amount' => 10000.00,
+        $paymentIntent = Paymongo::paymentIntent()
+        ->create([
+            'amount' => 100,
+            'payment_method_allowed' => [
+                'paymaya', 'card'  // <--- Make sure to add paymaya here.
+            ],
+            'payment_method_options' => [
+                'card' => [
+                    'request_three_d_secure' => 'automatic',
+                ],
+            ],
+            'description' => 'This is a test payment intent',
+            'statement_descriptor' => 'LUIGEL STORE',
             'currency' => 'PHP',
-            'redirect' => [
-                'success' => 'https://example-website-payment.herokuapp.com/success',
-                'failed' => 'https://example-website-payment.herokuapp.com/failed'
-            ]
         ]);
-        $gcashSourceURL = $gcashSource->redirect['checkout_url']; 
-        $webhook = Paymongo::webhook()->create([
-            'url' => $gcashSourceURL,
-            'events' => [
-                'source.chargeable',
-                'payment.paid',
-                'payment.failed'
-            ]
+    
+    $paymentMethod = Paymongo::paymentMethod()
+        ->create([
+            'type' => 'paymaya',  // <--- and payment method type should be paymaya
+            'billing' => [
+                'address' => [
+                    'line1' => 'Somewhere there',
+                    'city' => 'Cebu City',
+                    'state' => 'Cebu',
+                    'country' => 'PH',
+                    'postal_code' => '6000',
+                ],
+                'name' => 'Hello',
+                'email' => 'hello@gmail.com',
+                'phone' => '09993999399',
+            ],
         ]);
-        return Redirect::to($gcashSourceURL);
+    
+    $attachedPaymentIntent = $paymentIntent->attach($paymentMethod->id, 'http://127.0.0.1.com/success'); // <--- And the second parameter should be the return_url.
+    return redirect($attachedPaymentIntent->next_action['redirect']['url']);
+    
     }
-}
+    public function success(){
+        if($gcashSourceID == "chargeable"){
+            $payment = Paymongo::payment()->create([
+                'amount' => 100.00,
+                'currency' => 'PHP',        
+                'description' => 'Testing payment', 
+                'statement_descriptor' => 'Test Paymongo', 
+                'source' => [
+                    'id' => $gcashSourceID,
+                    'type' => 'gcash'
+                ]    
+            ]);
+        }
+        return view('success');
+        }
+    }  
