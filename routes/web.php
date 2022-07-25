@@ -29,9 +29,13 @@ Route::get('/purchases', function () {
     return view('purchases');
 })->middleware('auth')->name('purchases');
 
-Route::get('/caqrt', function () {
+Route::get('/cart', function () {
     return view('cart');
 })->middleware('auth')->name('cart');
+
+Route::get('/your_courses', function () {
+    return view('your_courses');
+})->middleware('auth')->name('your_courses');
 
 Auth::routes();
 Route::get('/success', [App\Http\Controllers\HomeController::class, 'success'])->name('success');
