@@ -50,7 +50,7 @@
                                     <a class="nav-link" href="{{ route('courses')}}">Your Subjects</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('payments')}}">Payments</a>
+                                    <a class="nav-link" href="{{ route('payments')}}">Payment History</a>
                                 </li>
                         @endauth
                     </ul>
