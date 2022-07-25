@@ -40,7 +40,7 @@ class HomeController extends Controller
 
     }
 
-    public function bsit(){
+    public function payment(){
         $paymentIntent = Paymongo::paymentIntent()
         ->create([
             'amount' => 100,
