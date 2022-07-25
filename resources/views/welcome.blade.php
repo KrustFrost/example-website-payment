@@ -4,15 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>InterPay</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- Fonts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <style>
-
-        </style>
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
 <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
 <script src="{{asset('js/jquery.min.js')}}"></script>
 <!-- Styles -->
