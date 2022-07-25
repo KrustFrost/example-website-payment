@@ -20,10 +20,18 @@ Route::get('/', function () {
 Route::get('/cancel', function () {
     return view('cancel');
 })->middleware('auth')->name('cancel');
+
 Route::get('/card', function () {
     return view('card');
 })->middleware('auth')->name('card');
 
+Route::get('/purchases', function () {
+    return view('purchases');
+})->middleware('auth')->name('purchases');
+
+Route::get('/caqrt', function () {
+    return view('cart');
+})->middleware('auth')->name('cart');
 
 Auth::routes();
 Route::get('/success', [App\Http\Controllers\HomeController::class, 'success'])->name('success');
