@@ -38,6 +38,5 @@ Route::get('/success', [App\Http\Controllers\HomeController::class, 'success'])-
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/courses', [App\Http\Controllers\HomeController::class, 'courses'])->name('courses');
-Route::get('/payments', [App\Http\Controllers\HomeController::class, 'payments'])->name('payments');
 
 Route::post('/bsit', [App\Http\Controllers\HomeController::class, 'bsit'])->name('bsit');
