@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Luigel\Paymongo\Facades\Paymongo;
 use Illuminate\Support\Facades\Redirect;
-
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -29,7 +29,9 @@ class HomeController extends Controller
     }
     public function courses()
     {   
-        return view('courses');
+        $courses =  DB::table('tags')->get();
+
+        return view('courses')->with('courses', $courses);
 
 
     }
