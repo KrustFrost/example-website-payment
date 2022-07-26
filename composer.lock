@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "249cbc0d57d606c64078e126b5614f6b",
+    "content-hash": "4f918a9956be0022636025e4342a76e6",
     "packages": [
         {
             "name": "backpack/crud",
@@ -6543,7 +6543,7 @@
         },
         {
             "name": "laracasts/generators",
-            "version": "2.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/Laravel-5-Generators-Extended.git",
@@ -6561,6 +6561,7 @@
             "require-dev": {
                 "phpspec/phpspec": "~6.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -8949,7 +8950,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "laracasts/generators": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
