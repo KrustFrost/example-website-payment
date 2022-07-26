@@ -34,7 +34,9 @@ Route::get('/cart', function () {
 })->middleware('auth')->name('cart');
 
 Route::get('/your_courses', function () {
-    return view('your_courses');
+    $courses = DB::select('select * from tags ');
+
+    return view('your_courses')->with([$courses , 'courses']);
 })->middleware('auth')->name('your_courses');
 
 Auth::routes();
